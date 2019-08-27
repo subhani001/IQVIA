@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "298385b0-2eee-47db-862c-b1520c45fee7",
+		"name": "IQVIA-Flask",
+		"description": "This collection contains requests associated witht the Flask-JWT-Extended section of the REST API course.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "emails",
+			"item": [
+				{
+					"name": "/email/<email_address>",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": "{{server_address}}/email/subhani001@gmail.com"
+					},
+					"response": []
+				},
+				{
+					"name": "/email/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email_address\":\"subhani001@gmail.com\",\n  \"contacts_username\":\"subhani\"\n}"
+						},
+						"url": "{{server_address}}/email/create"
+					},
+					"response": []
+				},
+				{
+					"name": "/email/update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email_address\":\"subhani002@gmail.com\",\n  \"contacts_username\":\"subhani\"\n}"
+						},
+						"url": "{{server_address}}/email/update"
+					},
+					"response": []
+				},
+				{
+					"name": "/email/<email_address>",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{server_address}}/email/subhani001@gmail.com"
+					},
+					"response": []
+				},
+				{
+					"name": "/emails",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": "{{server_address}}/emails"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contacts",
+			"item": [
+				{
+					"name": "/contact/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"mahe\",\n\t\"firstname\":\"Mahebunnisa\",\n\t\"lastname\":\"Shaik\"\n}"
+						},
+						"url": "{{server_address}}/contact/create"
+					},
+					"response": []
+				},
+				{
+					"name": "/contact/update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"mahe\",\n\t\"firstname\":\"Mahebunisa\",\n\t\"lastname\":\"Shaik\"\n}"
+						},
+						"url": "{{server_address}}/contact/update"
+					},
+					"response": []
+				},
+				{
+					"name": "/contact/<username>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server_address}}/contact/subhani"
+					},
+					"response": []
+				},
+				{
+					"name": "/contact/<username>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{server_address}}/contact/subhani"
+					},
+					"response": []
+				},
+				{
+					"name": "/contacts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server_address}}/contacts"
+					},
+					"response": []
+				},
+				{
+					"name": "/task",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server_address}}/task"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

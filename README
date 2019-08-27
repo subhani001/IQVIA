@@ -1,0 +1,30 @@
+
+Steps to run this code (Flask + SQLAlchemy + Celery)
+This code is perfectly working with below instructions
+--------------------------------------------------------------------
+- Install Windows Python 3.6.5 and update system path folder with python path
+- Go to folder where IQVIA code is available
+- Install virtual environment through pip install virtualenv==16.7.3
+- create virtual environment for Python
+  > virtualenv venv
+  > cd venv
+- To activate virtual environment
+  > Scripts\activate
+- Install requirements through pip install command
+   pip install Flask==1.1.1  Flask-JWT==0.3.2 Flask-RESTful==0.3.7 Flask-SQLAlchemy==2.4.0 redis==2.9.0 rq==1.1.0  SQLAlchemy==1.3.7  celery==3.1.24
+
+- Install Redis( Redis-x64-3.2.100)
+- Start Redis Server (Double click on redis-server.exe)
+- Open one more command prompt and point to IQVIA folder.
+  > set FLASK_APP=app.py
+  > flask run
+-Open one more command prompt  and point to IQVIA folder
+ then type below command to start Celery
+  > celery -A app.celeryapp worker -l info
+-> Go to postman and import the JSON I have shared  i.e. IQVIA-Flask.postman_collection.json
+--> Please set global variable in Postman as server_name is http://127.0.0.1:5000/
+> Send Celery API request by clicking on Send button on GET /task endpoint
+>Now watch command prompt where you were running celery. see log generating.
+>Now go to postmant and click on GET /contacts endpoint to see updated results.
+>I have also included Dockerfile to make the image of our flask application, so that it can be deployed
+without any issues across environement. Just find the docker commands to create docker image 

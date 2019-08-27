@@ -1,0 +1,14 @@
+1)To build the Docker image(named: flaskapp) from Dockerfile on docker client machine from current directory
+This will create docker image from file called Dockerfile
+
+> docker build -t flaskapp:latest  .
+
+
+2)To see crated image
+>docker images
+
+3)To create Docker Container from the image called flaskapp
+>docker run -it -d -p 5000:5000 flaskapp
+
+4) Run to execute docker Container. This will run our flaskapp
+>docker run -it flaskapp
